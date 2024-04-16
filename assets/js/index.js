@@ -100,6 +100,23 @@ const optionList = document.querySelector('.option-list');
 let question = 0;
 
 
+// function showQuestions(index) {
+//     const questionTexte = document.querySelector('.question-text')
+//     questionTexte.textContent = `${questions[index].numb}. ${questions[index].question}`;
+
+//     let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
+//             <div class="option"><span>${questions[index].options[1]}</span></div>
+//             <div class="option"><span>${questions[index].options[2]}</span></div>
+//             <div class="option"><span>${questions[index].options[3]}</span></div>`;
+
+//     optionList.innerHTML = optionTag;
+
+//     const option = document.querySelectorAll('.option');
+//     for (let i = 0; i < option.length; i++){
+//         option[i].setAttribute('onclick', 'optionSelected(this)');
+//     }
+// }
+
 function showQuestions(index) {
     const questionTexte = document.querySelector('.question-text')
     questionTexte.textContent = `${questions[index].numb}. ${questions[index].question}`;
@@ -149,7 +166,7 @@ function optionSelected(answer){
 
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
-    questionTotal.textContent = `${index} of ${questions.length} Questions`;
+    questionTotal.textContent = `${index} sur ${questions.length} Questions`;
 }
 
 
@@ -164,7 +181,7 @@ function showResultBox() {
     resultBox.classList.add('active');
 
     const scoreText = document.querySelector('.score-text');
-    scoreText.textContent = `Your Score ${userScore} out of ${questions.length}`;
+    scoreText.textContent = `Votre Score ${userScore} sur ${questions.length}`;
     
     const circularProgress = document.querySelector('.circular-progress');
     const progressValue = document.querySelector('.progress-value');
